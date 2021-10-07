@@ -24,7 +24,7 @@ const DisplayBreeds = () => {
   return (
     <div>
       <Breeds />
-      <Modal
+      {/* <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel="My dialog"
@@ -34,7 +34,7 @@ const DisplayBreeds = () => {
 
         </div>
         <button onClick={toggleModal}>Close modal</button>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

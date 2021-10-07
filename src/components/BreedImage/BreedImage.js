@@ -33,7 +33,7 @@ const BreedImage = () => {
                     <ImageListItem>
                         <img
                             src={getBreed}
-                            // loading="lazy"
+                            loading="lazy"
                         />
                     </ImageListItem>
                     </div>

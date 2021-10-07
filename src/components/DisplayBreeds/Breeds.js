@@ -33,13 +33,13 @@ const Breeds = () => {
         <div className="breedContainer" >
 
             {breeds.map((breed, i) => (
-
-                <div key={i}>
+                <div>
                     <Link className="breedButton" onClick={toggleModal} to={`/${breed}/images`}>
                         <h1 className=" breedButton breedsList" key={i}>{breed}</h1>
                     </Link>
                 </div>
             ))}
+
 
             <Modal
                 isOpen={isOpen}
@@ -48,6 +48,7 @@ const Breeds = () => {
                 contentLabel="My dialog"
             >
                 <div>
+
                     <BreedImage />
                 </div>
                 <div className="modalButton">
