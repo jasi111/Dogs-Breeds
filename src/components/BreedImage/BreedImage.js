@@ -29,12 +29,15 @@ const BreedImage = () => {
 
             <ImageList className="breeImageGallery" sx={{ width: 500, height: 450 }} cols={5} rowHeight={164}>
                 {breed.map((getBreed, i) => (
+                    <div key={i}>
                     <ImageListItem>
                         <img
                             src={getBreed}
-                            loading="lazy"
+                            // loading="lazy"
                         />
                     </ImageListItem>
+                    </div>
+
                 ))}
             </ImageList>
         </div>

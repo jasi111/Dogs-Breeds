@@ -28,8 +28,10 @@ margin:0 auto
  .breedButton{
      /* border: 1px solid; */
      text-decoration: none;
-      background-color:whitesmoke;
+      background-color:whitesmoke;     
+ }
 
-     
+ .modalButton{
+ float:right;
  }
   

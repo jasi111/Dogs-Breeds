@@ -14,7 +14,7 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        backgroundColor: 'transparent'
+        backgroundColor: 'rgba(241, 248, 241, 0.8)'
     },
 };
 
@@ -27,6 +27,7 @@ const Breeds = () => {
         setIsOpen(!isOpen);
     }
 
+
     return (
 
         <div className="breedContainer" >
@@ -37,23 +38,22 @@ const Breeds = () => {
                     <Link className="breedButton" onClick={toggleModal} to={`/${breed}/images`}>
                         <h1 className=" breedButton breedsList" key={i}>{breed}</h1>
                     </Link>
-
-                    <Modal
-                        isOpen={isOpen}
-                        onRequestClose={toggleModal}
-                        style={customStyles}
-                        contentLabel="My dialog"
-                    >
-                        <div>
-                            <BreedImage />
-                        </div>
-                        <button onClick={toggleModal}>Close modal</button>
-                    </Modal>
-
                 </div>
             ))}
 
-
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={toggleModal}
+                style={customStyles}
+                contentLabel="My dialog"
+            >
+                <div>
+                    <BreedImage />
+                </div>
+                <div className="modalButton">
+                    <button  onClick={toggleModal}>Close modal</button>
+                </div>
+            </Modal>
 
 
 
