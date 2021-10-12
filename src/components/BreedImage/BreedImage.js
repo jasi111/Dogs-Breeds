@@ -9,17 +9,16 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 const BreedImage = () => {
     const breed = useSelector((state) => state.breedImage.breed);
-    console.log("test", breed)
     const dispatch = useDispatch();
 
     const { breedName } = useParams();
-    console.log("dfdgg", breedName)
 
     useEffect(() => {
         if (breedName && breedName !== "") dispatch(getBreedImage(breedName));
            return () => {
                dispatch(removeClickedBreed());
            }
+       
     }, [breedName])
 
 

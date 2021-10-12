@@ -1,9 +1,12 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import "./Breeds.css"
 import Modal from "react-modal";
 import BreedImage from "../BreedImage/BreedImage";
+import { getBreeds } from '../../redux/actions/actions';
+
+
 Modal.setAppElement("#root");
 
 const customStyles = {
@@ -20,22 +23,30 @@ const customStyles = {
 
 const Breeds = () => {
     const [isOpen, setIsOpen] = useState(false);
-
     const breeds = useSelector((state) => state.breedList.breeds);
+
+    const dispatch = useDispatch();
 
     function toggleModal() {
         setIsOpen(!isOpen);
+        
+
     }
 
+    useEffect(() => {
+        dispatch(getBreeds())
+       
+      }, [])
+
+ 
 
     return (
 
         <div className="breedContainer" >
-
             {breeds.map((breed, i) => (
                 <div>
                     <Link className="breedButton" onClick={toggleModal} to={`/${breed}/images`}>
-                        <h1 className=" breedButton breedsList" key={i}>{breed}</h1>
+                        <h1 className=" breedButton breedsList" key={i}>{breed.charAt(0).toUpperCase() + breed.slice(1)}</h1>
                     </Link>
                 </div>
             ))}
@@ -52,17 +63,15 @@ const Breeds = () => {
                     <BreedImage />
                 </div>
                 <div className="modalButton">
-                    <button  onClick={toggleModal}>Close modal</button>
+                    <Link className="breedButton" onClick={toggleModal} to={`/`}>
+                        <button >Close</button>
+                    </Link>
+               
                 </div>
             </Modal>
-
-
-
-
-
         </div>
     );
 
 };
 
-export default Breeds;
+export default Breeds

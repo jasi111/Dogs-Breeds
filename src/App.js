@@ -1,6 +1,5 @@
 import './App.css';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import DisplayBreeds from './components/DisplayBreeds/DisplayBreeds';
+import { BrowserRouter, Switch, Route} from "react-router-dom"
 import Breeds from './components/DisplayBreeds/Breeds';
 import Header from './components/Header.js/Header';
 
@@ -12,8 +11,8 @@ function App() {
 
         <Switch>
 
-          <Route path="/" exact component={DisplayBreeds} />
-          <Route path="/:breedName/images" exact component={Breeds} />
+          <Route  path="/" exact component={Breeds} />
+          <Route path="/:breedName/images"  exact component={Breeds} />
           <Route>404 Not Found</Route>
 
 
